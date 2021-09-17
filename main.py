@@ -12,7 +12,11 @@ async def on_message(msg):
   if msg.author == client.user:
     return
   
-  if msg.content.startswith('$hello'):
-    await msg.channel.send('Hello!')
+  if msg.content.startswith('$halo'):
+    await msg.channel.send('Nyahalo!')
+  
+  if msg.content.startswith('$bilang'):
+    msg_content = msg.content
+    await msg.channel.send(msg.content.replace("$bilang",""))
   
 client.run(os.getenv("DISCORD_BOT_TOKEN"))
